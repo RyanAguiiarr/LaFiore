@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2c4433; /* Verde escuro */
+  --color-accent: #c2a75c; /* Dourado suave */
+  --color-background: #f6f6f6; /* Branco gelo */
+  --color-muted: #dadada; /* Cinza suave */
+  --color-feminine: #e5cfcf; /* Rosa claro */
+  --color-highlight: #a88fc2; /* Roxo claro */
+  --color-text: #1a1a1a; /* Preto/Chumbo */
+}
+
+@layer base {
+  * {
+    @apply border-la-fiore-muted;
+  }
+
+  body {
+    @apply bg-la-fiore-background text-la-fiore-text;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  /* Tipografia La Fiore */
+  .la-fiore-heading {
+    @apply font-playfair font-bold text-la-fiore-text;
+  }
+
+  .la-fiore-heading-1 {
+    @apply la-fiore-heading text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  .la-fiore-heading-2 {
+    @apply la-fiore-heading text-3xl md:text-4xl leading-tight;
+  }
+
+  .la-fiore-heading-3 {
+    @apply la-fiore-heading text-2xl md:text-3xl leading-snug;
+  }
+
+  .la-fiore-heading-4 {
+    @apply la-fiore-heading text-xl md:text-2xl leading-snug;
+  }
+
+  .la-fiore-script {
+    @apply font-great-vibes text-la-fiore-accent;
+  }
+
+  .la-fiore-body {
+    @apply font-lato text-base leading-relaxed text-gray-700;
+  }
+
+  .la-fiore-body-large {
+    @apply font-lato text-lg leading-relaxed text-gray-700;
+  }
+
+  .la-fiore-caption {
+    @apply font-lato text-sm text-gray-600;
+  }
+
+  /* Componentes de UI */
+  .la-fiore-gradient {
+    background: linear-gradient(135deg, #2c4433 0%, #1a1a1a 100%);
+  }
+
+  .la-fiore-button {
+    @apply bg-la-fiore-accent text-la-fiore-text hover:bg-la-fiore-accent/90 transition-colors duration-200 font-lato font-medium px-6 py-3 rounded-lg;
+  }
+
+  .la-fiore-button-outline {
+    @apply border-2 border-la-fiore-accent text-la-fiore-accent hover:bg-la-fiore-accent hover:text-la-fiore-text transition-colors duration-200 font-lato px-6 py-3 rounded-lg;
+  }
+
+  .la-fiore-input {
+    @apply bg-la-fiore-background border border-la-fiore-muted rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-la-fiore-accent focus:border-transparent transition-colors font-lato;
+  }
+
+  .la-fiore-card {
+    @apply bg-white border border-la-fiore-muted/30 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient-la-fiore {
+    background: linear-gradient(135deg, #2c4433 0%, #c2a75c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
